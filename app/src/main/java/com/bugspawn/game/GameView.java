@@ -127,7 +127,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback, Run
             if (dt > 0.05f) dt = 0.05f;
             if (dt < 0f) dt = 0f;
             update(dt);
-            draw(c);
+            render(c);
             try {
                 holder.unlockCanvasAndPost(c);
             } catch (Exception ignored) {
@@ -362,7 +362,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback, Run
 
     // ---- rendering ----
 
-    void draw(Canvas c) {
+    void render(Canvas c) {
         drawBackground(c);
         if (state == TITLE) {
             for (int i = 0; i < titleBugs.size(); i++) titleBugs.get(i).draw(c, paint);
